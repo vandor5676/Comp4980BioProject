@@ -1,0 +1,15 @@
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\Comp4980BioProject.exe.config
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\Comp4980BioProject.exe
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\Comp4980BioProject.pdb
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.csprojAssemblyReference.cache
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\MainWindow.g.cs
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\App.g.cs
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject_MarkupCompile.cache
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject_MarkupCompile.lref
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\MainWindow.baml
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.g.resources
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.Properties.Resources.resources
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.GenerateResource.cache
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.CoreCompileInputs.cache
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.exe
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.pdb
