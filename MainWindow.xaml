@@ -5,32 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Comp4980BioProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinWidth="1920" MinHeight="1080">
+        Title="MainWindow" Height="1080" Width="1920">
     <Grid>
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="Auto"/>
 
-            <ColumnDefinition Width="611*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <FlowDocumentScrollViewer x:Name="flowDoc" Grid.Column="1"                            
-                                  HorizontalScrollBarVisibility="Visible" Height="900" VerticalAlignment="Top"
+                                  HorizontalScrollBarVisibility="Hidden" Height="900" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Width="500" VerticalScrollBarVisibility="Hidden"
       >
 
 
             <FlowDocument >
                 <Table Name="table1" CellSpacing="0">
-                    <!--<TableRowGroup>
+                    <TableRowGroup>
                         <TableRow>
-                            <TableCell TextAlignment="Center">
+                            <TableCell TextAlignment="Center" ColumnSpan="1" LineHeight="300" Background="#FFE04545">
                                 <Paragraph>1</Paragraph>
                             </TableCell>
                             <TableCell>
                                 <Paragraph>1</Paragraph>
                             </TableCell>
                         </TableRow>
-                    </TableRowGroup>-->
+                        <TableRow>
+                            <TableCell TextAlignment="Center" ColumnSpan="1" LineHeight="10">
+                                <Paragraph>1</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>1</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
                 </Table>
             </FlowDocument>
         </FlowDocumentScrollViewer>

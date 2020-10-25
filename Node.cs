@@ -10,8 +10,8 @@ namespace Comp4980BioProject
     {
         char topLetter { get; set; }
         char leftLetter { get; set; }
-        
-        public char valLetter { get; set; }
+
+        public char valLetter { get; set; } = '0';
         public int value;
         
         Node left, top, diag;
@@ -28,6 +28,11 @@ namespace Comp4980BioProject
         public Node()
         {
             this.value = 100;
+        }
+        public Node(string value)
+        {
+            if(value == "blank")
+            this.valLetter = '-';
         }
 
 
