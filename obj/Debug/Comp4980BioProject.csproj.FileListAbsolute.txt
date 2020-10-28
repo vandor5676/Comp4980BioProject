@@ -13,3 +13,9 @@ C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioPro
 C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.CoreCompileInputs.cache
 C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.exe
 C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.pdb
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\MoreLinq.dll
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\System.ValueTuple.dll
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\MoreLinq.pdb
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\MoreLinq.xml
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\System.ValueTuple.xml
+C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.CopyComplete

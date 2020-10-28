@@ -42,18 +42,24 @@
                 </Table>
             </FlowDocument>
         </FlowDocumentScrollViewer>
-        <Rectangle Fill="#FFF4F4F5"  Height="135"  Stroke="Black" VerticalAlignment="Top"   Grid.Column="0" Margin="10,443,20,0" />
+        <Rectangle Fill="#FFF4F4F5"  Height="165"  Stroke="Black" VerticalAlignment="Top"   Grid.Column="0" Margin="10,443,20,0" />
         <TextBox x:Name="seq1TextBox" HorizontalAlignment="Left" Height="162" Margin="10,55,0,0" TextWrapping="Wrap" Text="ACTCG" VerticalAlignment="Top" Width="407"/>
         <TextBox x:Name="seq2TextBox" HorizontalAlignment="Left" Height="162" Margin="10,261,0,0" TextWrapping="Wrap" Text="ACAGTAG" VerticalAlignment="Top" Width="407"/>
         <Label Content="Sequence 1" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="412" Height="44" FontSize="20"/>
         <Label Content="Sequence 2" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="417" Height="44" FontSize="20"/>
         <Button x:Name="startButton" Content="Start" HorizontalAlignment="Left" Margin="10,942,0,0" VerticalAlignment="Top" Width="417" Height="97" FontSize="24" Click="startButton_Click"/>
-        <Label Content="linear gap Penalty" HorizontalAlignment="Left" Margin="21,461,0,0" VerticalAlignment="Top" Width="115" Height="44"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="127,465,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="83"/>
-        <Label Content="Matrix Number" HorizontalAlignment="Left" Margin="21,495,0,0" VerticalAlignment="Top" Width="115" Height="44"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="127,499,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="83"/>
-        <RadioButton Content="PAM" HorizontalAlignment="Left" Margin="27,527,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.349,0.378"/>
-        <RadioButton Content="BLOSUM" HorizontalAlignment="Left" Margin="27,547,0,0" VerticalAlignment="Top" />
+        <Label Content="linear gap Penalty" HorizontalAlignment="Left" Margin="20,494,0,0" VerticalAlignment="Top" Width="114" Height="44"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="126,498,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Matrix Number" HorizontalAlignment="Left" Margin="20,528,0,0" VerticalAlignment="Top" Width="114" Height="44"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="126,532,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
+        
+        <RadioButton GroupName="matrix" IsChecked="True" Content="PAM" HorizontalAlignment="Left" Margin="26,560,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.349,0.378"/>
+        <RadioButton GroupName="matrix" Content="BLOSUM" HorizontalAlignment="Left" Margin="79,560,0,0" VerticalAlignment="Top" />
+        
+        <RadioButton GroupName="alignment" x:Name="globalAlignmentRB" IsChecked="True" Content="Global" HorizontalAlignment="Left" Margin="86,479,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.349,0.378"/>
+        <RadioButton GroupName="alignment" x:Name="localAlignmentRB" Content="Local" HorizontalAlignment="Left" Margin="159,479,0,0" VerticalAlignment="Top" />
+        
+        <Label Content="Alignment:" HorizontalAlignment="Left" Margin="16,472,0,0" VerticalAlignment="Top"/>
 
 
 
