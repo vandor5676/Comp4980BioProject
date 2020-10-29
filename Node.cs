@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Comp4980BioProject
 {
     public class Node
     {
-        
-       public char topLetter { get; set; }
-       public char leftLetter { get; set; }
+
+        public char topLetter { get; set; }
+        public char leftLetter { get; set; }
 
         //for elements with letters
         public char valLetter { get; set; } = '0';
         // for elements with numbers
         public int value;
-
+        //color for traceback matrix
+        public SolidColorBrush backColor { get; set; }
 
         public Node cameFrom { get; set; } = null;
 

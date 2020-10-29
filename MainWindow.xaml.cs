@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Shell;
 
 namespace Comp4980BioProject
 {
@@ -22,10 +23,15 @@ namespace Comp4980BioProject
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        //sequences
         string seq1, seq2;
+        //linear gap penalty
         public int lgp = -1;
 
+        //default background color
+        SolidColorBrush defaultBrush = Brushes.LightGray;
+
+        //holds the table values
         List<List<Node>> grid;
         public class DataObject
         {
@@ -75,6 +81,7 @@ namespace Comp4980BioProject
                     grid[1].Add(new Node { value = grid[1].Last().value + lgp, topLetter = letter, leftLetter = '-', cameFrom = grid[1].Last() });//each linear gap penalty is the previus square + the penalty
             }
 
+            Node bigestNode = new Node { value = -1 };
             //add each line untill the end
             foreach (char letter in seq2)
             {
@@ -88,7 +95,7 @@ namespace Comp4980BioProject
                     (new Node { value = 0, leftLetter = letter, topLetter = '-', cameFrom = grid.Last()[1] }) :
                     (new Node { value = (grid.Last()[1].value + (lgp)), leftLetter = letter, topLetter = '-', cameFrom = grid.Last()[1] }));
 
-                foreach (char letter2 in seq1)
+                foreach (char letter2 in seq1)//inner matrix
                 {
                     int curentIndex = tempLine.IndexOf(tempLine.Last()) + 1;
                     Node left = tempLine[curentIndex - 1];
@@ -98,17 +105,41 @@ namespace Comp4980BioProject
                     //get best choice
                     Node cameFrom = GetBestNode(left, top, diag, localAlighnment);
                     tempLine.Add(new Node { value = cameFrom.calcScore, leftLetter = letter2, topLetter = letter, cameFrom = cameFrom });
+                    //keep track of bigest node
+                    if (tempLine.Last().value > bigestNode.value) bigestNode = tempLine.Last();
                 }
                 grid.Add(tempLine);
             }
             //--
+            //create traceback
+            if (localAlighnment)
+                createLocalTraceback(bigestNode);
+            else
+                createGlobalTraceback();
             //display grid
             DisplayGrid();
 
         }
-        public void setLetter(int row, int col)
+        public void createLocalTraceback(Node workingNode)
         {
-
+            workingNode.backColor = Brushes.LightBlue;
+            do
+            {
+                workingNode = workingNode.cameFrom;
+                workingNode.backColor = Brushes.LightBlue;//traceback color               
+            }
+            while (workingNode.value != 0);
+        }
+        public void createGlobalTraceback()
+        {
+            Node workingNode = grid.Last().Last();
+            workingNode.backColor = Brushes.LightBlue;
+            do
+            {
+                workingNode = workingNode.cameFrom;
+                workingNode.backColor = Brushes.LightBlue;//traceback color               
+            }
+            while (workingNode.cameFrom != null);
         }
 
         public Node GetBestNode(Node leftNode, Node topNode, Node diagNode, bool isLocalAlignment)
@@ -126,7 +157,7 @@ namespace Comp4980BioProject
             return bestNode;
         }
 
-        private int subMatrixLookup()
+        private int subMatrixLookup() // -----this is where the matrix lookup 
         {
             throw new NotImplementedException();
         }
@@ -156,11 +187,13 @@ namespace Comp4980BioProject
                     tr.Cells.Add(new TableCell(new Paragraph(new Run(grid[r][c].valLetter != '0' ? grid[r][c].valLetter.ToString() : grid[r][c].value.ToString()))));
                     tr.Cells[c].TextAlignment = TextAlignment.Center;
                     tr.Cells[c].LineHeight = 20;
+                    tr.Cells[c].Background = grid[r][c].backColor ?? defaultBrush;
 
                     //tr.Cells[c]
-                    if (c == 4 && r == 4)
-                        tr.Cells[4].Background = Brushes.Red;
-
+                    //if (c == 1 && r == 1)
+                    //{
+                    //    int stophere = 1;
+                    //}
 
                 }
                 TableRowGroup trg = new TableRowGroup();
@@ -173,6 +206,8 @@ namespace Comp4980BioProject
         {
             InitializeComponent();
 
+
+            // for testing
 
             int cols = 48;
             int rows = 60;
