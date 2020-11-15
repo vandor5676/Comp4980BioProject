@@ -33,6 +33,10 @@ namespace Comp4980BioProject
 
         //holds the table values
         List<List<Node>> grid;
+
+        //strings holding the paiwise alignment information
+        string alignmentTop, alignmentLeft, alignmentBars;
+
         public class DataObject
         {
             public int A { get; set; }
@@ -54,6 +58,9 @@ namespace Comp4980BioProject
 
             //Declare Grid List
             grid = new List<List<Node>>();
+
+            //clear previous pairwise alignment 
+            alignmentTop = ""; alignmentLeft = ""; alignmentBars = "";
 
             //first 2 blanks in grid
             grid.Add(new List<Node>());//new line
@@ -103,8 +110,8 @@ namespace Comp4980BioProject
                     Node diag = grid[previusLine][curentIndex - 1];
 
                     //get best choice
-                    Node cameFrom = GetBestNode(left, top, diag, localAlighnment);
-                    tempLine.Add(new Node { value = cameFrom.calcScore, leftLetter = letter2, topLetter = letter, cameFrom = cameFrom });
+                    Node cameFrom = GetBestNode(left, top, diag, localAlighnment, letter, letter2);
+                    tempLine.Add(new Node { value = cameFrom.calcScore, leftLetter =letter , topLetter = letter2, cameFrom = cameFrom, cameFromDirection = cameFrom.directionPasser });
                     //keep track of bigest node
                     if (tempLine.Last().value > bigestNode.value) bigestNode = tempLine.Last();
                 }
@@ -116,8 +123,12 @@ namespace Comp4980BioProject
                 createLocalTraceback(bigestNode);
             else
                 createGlobalTraceback();
-            //display grid
+
+            //display grid and pairwise alignment
             DisplayGrid();
+            DisplayPairwiseAlignment();
+
+
 
         }
         public void createLocalTraceback(Node workingNode)
@@ -125,6 +136,7 @@ namespace Comp4980BioProject
             workingNode.backColor = Brushes.LightBlue;
             do
             {
+                createPairwiseAlignment(workingNode);
                 workingNode = workingNode.cameFrom;
                 workingNode.backColor = Brushes.LightBlue;//traceback color               
             }
@@ -136,17 +148,52 @@ namespace Comp4980BioProject
             workingNode.backColor = Brushes.LightBlue;
             do
             {
+                createPairwiseAlignment(workingNode);
                 workingNode = workingNode.cameFrom;
-                workingNode.backColor = Brushes.LightBlue;//traceback color               
+                workingNode.backColor = Brushes.LightBlue;//traceback color  
+
             }
             while (workingNode.cameFrom != null);
         }
-
-        public Node GetBestNode(Node leftNode, Node topNode, Node diagNode, bool isLocalAlignment)
+        // alignmentTop, alignmentLeft, alignmentBars;
+        public void createPairwiseAlignment(Node workingNode)
         {
+            if (workingNode.cameFrom != null)
+                if (workingNode.cameFromDirection == "left")
+                {
+                    // MessageBox.Show("left");
+                    alignmentTop += workingNode.topLetter;
+                    alignmentLeft += "-";
+                    alignmentBars += " ";
+                }
+                else if (workingNode.cameFromDirection == "up")
+                {
+                    // MessageBox.Show("up");
+                    alignmentTop += "-";
+                    alignmentLeft += workingNode.leftLetter;
+                    alignmentBars += " ";
+                }
+                else if (workingNode.cameFromDirection == "diagonal")
+                {
+                    //MessageBox.Show("diagonal");
+                    alignmentLeft += workingNode.leftLetter;
+                    alignmentTop += workingNode.topLetter;
+                    alignmentBars += (workingNode.leftLetter == workingNode.topLetter) ? "|" : " ";
+                }
+        }
+
+
+        public Node GetBestNode(Node leftNode, Node topNode, Node diagNode, bool isLocalAlignment, char l1, char l2)
+        {
+            //give each node a score
             leftNode.calcScore = leftNode.value + lgp;
             topNode.calcScore = topNode.value + lgp;
-            diagNode.calcScore = diagNode.value + 1; //subMatrixLookup();
+            diagNode.calcScore = diagNode.value + matchMissmatchScore(l1, l2); //subMatrixLookup();
+
+            //describe potental next node location, used for pairwise alignment
+            leftNode.directionPasser = "left";
+            topNode.directionPasser = "up";
+            diagNode.directionPasser = "diagonal";
 
             List<Node> Nodes = new List<Node> { leftNode, topNode, diagNode };
             var bestNode = Nodes.MaxBy(x => x.calcScore).First();
@@ -161,7 +208,14 @@ namespace Comp4980BioProject
         {
             throw new NotImplementedException();
         }
+        public int matchMissmatchScore(char l1, char l2) //---for testing
+        {
+            if (l1 == l2)
+                return 1;
+            else
+                return 0;
 
+        }
         public void DisplayGrid()
         {
             //clear and reset variables
@@ -200,6 +254,13 @@ namespace Comp4980BioProject
                 trg.Rows.Add(tr);
                 table1.RowGroups.Add(trg);
             }
+        }
+        // string alignmentTop, alignmentLeft, alignmentBars;
+        public void DisplayPairwiseAlignment()
+        {
+            topAlignmentLable.Content = Helper.Reverse( alignmentTop);
+            pairwiseBarsLable.Content = Helper.Reverse(alignmentBars);
+            leftAlignmentLable.Content = Helper.Reverse(alignmentLeft); 
         }
 
         public MainWindow()

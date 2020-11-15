@@ -52,14 +52,19 @@
         <TextBox HorizontalAlignment="Left" Height="22" Margin="126,498,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
         <Label Content="Matrix Number" HorizontalAlignment="Left" Margin="20,528,0,0" VerticalAlignment="Top" Width="114" Height="44"/>
         <TextBox HorizontalAlignment="Left" Height="22" Margin="126,532,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
-        
+
         <RadioButton GroupName="matrix" IsChecked="True" Content="PAM" HorizontalAlignment="Left" Margin="26,560,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.349,0.378"/>
         <RadioButton GroupName="matrix" Content="BLOSUM" HorizontalAlignment="Left" Margin="79,560,0,0" VerticalAlignment="Top" />
-        
+
         <RadioButton GroupName="alignment" x:Name="globalAlignmentRB" IsChecked="True" Content="Global" HorizontalAlignment="Left" Margin="86,479,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.349,0.378"/>
         <RadioButton GroupName="alignment" x:Name="localAlignmentRB" Content="Local" HorizontalAlignment="Left" Margin="159,479,0,0" VerticalAlignment="Top" />
-        
+
         <Label Content="Alignment:" HorizontalAlignment="Left" Margin="16,472,0,0" VerticalAlignment="Top"/>
+
+        <Label Content="Pairwise Alignment:" HorizontalAlignment="Left" Margin="10,942,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="topAlignmentLable" Content="top" HorizontalAlignment="Left" Margin="128,942,0,0" VerticalAlignment="Top" Grid.Column="1" Padding="5,5,5,0" FontFamily="Courier New"/>
+        <Label x:Name="pairwiseBarsLable" Content="pairwise bars" HorizontalAlignment="Left" Margin="128,958,0,0" VerticalAlignment="Top" Grid.Column="1" Padding="5,0" FontFamily="Courier New"/>
+        <Label x:Name="leftAlignmentLable" Content="left" HorizontalAlignment="Left" Margin="128,972,0,0" VerticalAlignment="Top" Grid.Column="1" Padding="5,0,5,5" FontFamily="Courier New"/>
 
 
 

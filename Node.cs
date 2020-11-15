@@ -21,9 +21,16 @@ namespace Comp4980BioProject
         public SolidColorBrush backColor { get; set; }
 
         public Node cameFrom { get; set; } = null;
+        
+        //describes the direction that this node came from, used to create the pairwise alignment
+        public string cameFromDirection { get; set; }
 
         //used when calculating best option(left top diag)
-       public int calcScore { get; set; }
+        public int calcScore { get; set; }
+
+        //describes the direction of the next node in the traceback matrix, used to create the pairwise alignment
+        public string directionPasser { get; set; }
+
 
         //nullNode
         public Node()
@@ -34,8 +41,8 @@ namespace Comp4980BioProject
         //create a blank node 
         public Node(string value)
         {
-            if(value == "blank")
-            this.valLetter = '-';
+            if (value == "blank")
+                this.valLetter = '-';
         }
 
 
