@@ -35,9 +35,10 @@ namespace Comp4980BioProject
         List<List<Node>> grid;
 
         //strings holding the paiwise alignment information
-        string alignmentTop, alignmentLeft, alignmentBars , alignmentScoreString;
+        string alignmentTop, alignmentLeft, alignmentBars , alignmentScoreString = "";
         //holds the alignment score
         int alignmnetScoreInt;
+
 
         //create matrix
         private void startButton_Click(object sender, RoutedEventArgs e)
@@ -122,7 +123,7 @@ namespace Comp4980BioProject
 
             //display grid and pairwise alignment
             DisplayGrid();
-            DisplayPairwiseAlignment();
+            DisplayPairwiseAlignmentAndScore();
 
 
 
@@ -161,7 +162,9 @@ namespace Comp4980BioProject
                     alignmentTop += workingNode.topLetter;
                     alignmentLeft += "-";
                     alignmentBars += " ";
-                    alignmnetScoreString
+                    //alignment score string and value
+                    alignmentScoreString = alignmentScoreString.Insert(0,"(-1)");
+                    alignmnetScoreInt += -1;
                 }
                 else if (workingNode.cameFromDirection == "up")
                 {
@@ -169,6 +172,9 @@ namespace Comp4980BioProject
                     alignmentTop += "-";
                     alignmentLeft += workingNode.leftLetter;
                     alignmentBars += " ";
+                    //alignment score string and value
+                    alignmentScoreString = alignmentScoreString.Insert(0, "(-1)");
+                    alignmnetScoreInt += -1;
                 }
                 else if (workingNode.cameFromDirection == "diagonal")
                 {
@@ -176,6 +182,13 @@ namespace Comp4980BioProject
                     alignmentLeft += workingNode.leftLetter;
                     alignmentTop += workingNode.topLetter;
                     alignmentBars += (workingNode.leftLetter == workingNode.topLetter) ? "|" : " ";
+                    //alignment score string and value
+                    //alignmentScoreString += "("+ subMatrixLookup(workingNode.leftLetter, workingNode.topLetter).ToString() + ")";
+                    //alignmentScoreString += (workingNode.leftLetter == workingNode.topLetter) ? "(+1)" : "(-1)"; // for testing
+                    alignmentScoreString = (workingNode.leftLetter == workingNode.topLetter) ? alignmentScoreString.Insert(0, "(+1)") : alignmentScoreString.Insert(0, "(-1)");
+                    // alignmnetScoreInt += subMatrixLookup(workingNode.leftLetter, workingNode.topLetter)
+                    alignmnetScoreInt += (workingNode.leftLetter == workingNode.topLetter) ? 1 : -1; // for testing;
+
                 }
         }
 
@@ -201,7 +214,7 @@ namespace Comp4980BioProject
             return bestNode;
         }
 
-        private int subMatrixLookup() // -----this is where the matrix lookup 
+        private int subMatrixLookup() // -----this is where the matrix lookup is going to be
         {
             throw new NotImplementedException();
         }
@@ -253,11 +266,14 @@ namespace Comp4980BioProject
             }
         }
         // string alignmentTop, alignmentLeft, alignmentBars;
-        public void DisplayPairwiseAlignment()
+        public void DisplayPairwiseAlignmentAndScore()
         {
             topAlignmentLable.Content = Helper.Reverse( alignmentTop);
             pairwiseBarsLable.Content = Helper.Reverse(alignmentBars);
-            leftAlignmentLable.Content = Helper.Reverse(alignmentLeft); 
+            leftAlignmentLable.Content = Helper.Reverse(alignmentLeft);
+
+            alignmentScoreLable.Content = (alignmentScoreString);
+            alignmentScoreLable.Content += " = " + alignmnetScoreInt.ToString();
         }
 
         public MainWindow()

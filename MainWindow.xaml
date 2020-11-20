@@ -47,16 +47,16 @@
         <Label Content="Sequence 1" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="412" Height="44" FontSize="20"/>
         <Label Content="Sequence 2" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="417" Height="44" FontSize="20"/>
         <Button x:Name="startButton" Content="Start" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="417" Height="97" FontSize="24" Click="startButton_Click"/>
-        <Label Content="linear gap Penalty" HorizontalAlignment="Left" Margin="20,494,0,0" VerticalAlignment="Top" Width="114" Height="44"/>
-        <TextBox x:Name="LinearGapPenaltyTextBox" HorizontalAlignment="Left" Height="22" Margin="126,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" IsEnabled="True"/>
-        <Label Content="Matrix Number" HorizontalAlignment="Left" Margin="20,528,0,0" VerticalAlignment="Top" Width="114" Height="44"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="126,532,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
+        <Label Content="linear gap Penalty" HorizontalAlignment="Left" Margin="16,532,0,0" VerticalAlignment="Top" Width="114" Height="44"/>
+        <TextBox x:Name="LinearGapPenaltyTextBox" HorizontalAlignment="Left" Height="22" Margin="126,536,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" IsEnabled="True"/>
+        <Label Content="Matrix Number" HorizontalAlignment="Left" Margin="16,558,0,0" VerticalAlignment="Top" Width="114" Height="29"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="126,562,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
+        <RadioButton x:Name="pamCheckbox" GroupName="matrix" Content="PAM" HorizontalAlignment="Left" Margin="137,500,0,0" VerticalAlignment="Top" />
+        <RadioButton x:Name="blosumCheckbox" GroupName="matrix" Content="BLOSUM" HorizontalAlignment="Left" Margin="197,500,0,0" VerticalAlignment="Top" />
 
-        <RadioButton GroupName="matrix" IsChecked="True" Content="PAM" HorizontalAlignment="Left" Margin="26,560,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.349,0.378"/>
-        <RadioButton GroupName="matrix" Content="BLOSUM" HorizontalAlignment="Left" Margin="79,560,0,0" VerticalAlignment="Top" />
 
-        <RadioButton GroupName="alignment" x:Name="globalAlignmentRB" IsChecked="True" Content="Global" HorizontalAlignment="Left" Margin="86,479,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.349,0.378"/>
-        <RadioButton GroupName="alignment" x:Name="localAlignmentRB" Content="Local" HorizontalAlignment="Left" Margin="159,479,0,0" VerticalAlignment="Top" />
+        <RadioButton GroupName="alignment" x:Name="globalAlignmentRB" IsChecked="True" Content="Global" HorizontalAlignment="Left" Margin="137,478,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.094,0.578"/>
+        <RadioButton GroupName="alignment" x:Name="localAlignmentRB" Content="Local" HorizontalAlignment="Left" Margin="197,480,0,0" VerticalAlignment="Top" />
 
         <Label Content="Alignment:" HorizontalAlignment="Left" Margin="16,472,0,0" VerticalAlignment="Top"/>
 
@@ -64,6 +64,9 @@
         <Label x:Name="topAlignmentLable" Content="top" HorizontalAlignment="Left" Margin="128,0,0,88" VerticalAlignment="Bottom" Grid.Column="1" Padding="5,5,5,0" FontFamily="Courier New"/>
         <Label x:Name="pairwiseBarsLable" Content="pairwise bars" HorizontalAlignment="Left" Margin="128,0,0,77" VerticalAlignment="Bottom" Grid.Column="1" Padding="5,0" FontFamily="Courier New"/>
         <Label x:Name="leftAlignmentLable" Content="left" HorizontalAlignment="Left" Margin="128,0,0,58" VerticalAlignment="Bottom" Grid.Column="1" Padding="5,0,5,5" FontFamily="Courier New"/>
+        <Label Content="Alignment Score:" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Grid.Column="1"/>
+        <Label x:Name="alignmentScoreLable" Content="score" HorizontalAlignment="Left" Margin="128,0,0,14" VerticalAlignment="Bottom" Grid.Column="1" Padding="5,5,5,0" FontFamily="Courier New"/>
+        <Label Content="Substitution Matrix:" HorizontalAlignment="Left" Margin="16,494,0,0" VerticalAlignment="Top"/>
 
 
 
