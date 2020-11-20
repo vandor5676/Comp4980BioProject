@@ -35,14 +35,9 @@ namespace Comp4980BioProject
         List<List<Node>> grid;
 
         //strings holding the paiwise alignment information
-        string alignmentTop, alignmentLeft, alignmentBars;
-
-        public class DataObject
-        {
-            public int A { get; set; }
-            public int B { get; set; }
-            public int C { get; set; }
-        }
+        string alignmentTop, alignmentLeft, alignmentBars , alignmentScoreString;
+        //holds the alignment score
+        int alignmnetScoreInt;
 
         //create matrix
         private void startButton_Click(object sender, RoutedEventArgs e)
@@ -54,7 +49,8 @@ namespace Comp4980BioProject
             //get alighnment type
             bool localAlighnment = (bool)localAlignmentRB.IsChecked;
 
-            lgp = -1;//linear gap penalty
+            //get valid linear gap penalty
+            lgp = Helper.GetValidNumber(this);
 
             //Declare Grid List
             grid = new List<List<Node>>();
@@ -165,6 +161,7 @@ namespace Comp4980BioProject
                     alignmentTop += workingNode.topLetter;
                     alignmentLeft += "-";
                     alignmentBars += " ";
+                    alignmnetScoreString
                 }
                 else if (workingNode.cameFromDirection == "up")
                 {

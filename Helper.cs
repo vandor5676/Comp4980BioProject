@@ -16,5 +16,23 @@ namespace Comp4980BioProject
             Array.Reverse(charArray);
             return new string(charArray);
         }
+
+        public static int GetValidNumber(MainWindow mw)
+        {
+             int num;
+            try
+            {
+                 num = int.Parse(mw.LinearGapPenaltyTextBox.Text);
+                if (num > 0)
+                    num = num * -1;
+            }
+            catch
+            {               
+                mw.LinearGapPenaltyTextBox.Text = "-1";
+                return -1;
+            }
+            mw.LinearGapPenaltyTextBox.Text = num.ToString();
+            return num;
+        }
     }
 }
