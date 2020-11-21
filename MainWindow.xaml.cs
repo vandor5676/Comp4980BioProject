@@ -228,12 +228,12 @@ namespace Comp4980BioProject
         private int subMatrixLookup(char l1, char l2) // -----this is where the matrix lookup is going to be
         {
             // for testing
-            l1 = 'c';l2 = 'c';
+            //l1 = 'c';l2 = 'c';
 
             if (matrixType == 'p')
-                return MatrixHelper.pam250(l1, l2);
+                return MatrixHelper.pam250(Char.ToLower(l1), Char.ToLower(l2));
             else if (matrixType == 'b')
-                return MatrixHelper.blosum62(l1, l2);
+                return MatrixHelper.blosum62(Char.ToLower(l1), Char.ToLower(l2));
 
             else
                 throw new Exception("Error in subMatrixLookup, matrix not set to p or b");
