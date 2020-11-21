@@ -204,23 +204,29 @@ namespace Comp4980BioProject
             return bestNode;
         }
 
-        private int subMatrixLookup(char matrix, int matNum char c1, char c2) // -----this is where the matrix lookup 
+        private int subMatrixLookup(char matrix, int matNum, char c1, char c2) // -----this is where the matrix lookup 
         {
             
-            if(matrix =='p')
+            if(matrix =='p'){
                 if(matNum==50)
                     return pam50(c1,c2);
                 else if(matNum==150)
                     return pam150(c1,c2);
                 else if(matNum==250)
                     return pam250(c1, c2);
-            else if (matrix == 'b')
+                else
+                    return 0;
+                }
+            else if (matrix == 'b'){
                     if(matNum==62)
                         return blosum62(c1, c2);
                     else if(matNum==80)
                         return blosum80(c1,c2);
                     else if(matNum==90)
                         return blosum90(c1,c2);
+                    else
+                        return 0;
+                    }
             else
                 return 0;
          
