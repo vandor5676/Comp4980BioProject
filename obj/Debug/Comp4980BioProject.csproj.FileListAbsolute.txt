@@ -19,3 +19,24 @@ C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\MoreLinq.pdb
 C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\MoreLinq.xml
 C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\bin\Debug\System.ValueTuple.xml
 C:\School\Bioinfrmatics 4980\project\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.CopyComplete
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\Comp4980BioProject.exe.config
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\Comp4980BioProject.exe
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\Comp4980BioProject.pdb
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\MoreLinq.dll
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\System.ValueTuple.dll
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\MoreLinq.pdb
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\MoreLinq.xml
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\bin\Debug\System.ValueTuple.xml
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.csprojAssemblyReference.cache
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\MainWindow.g.cs
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\App.g.cs
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject_MarkupCompile.cache
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject_MarkupCompile.lref
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\MainWindow.baml
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.g.resources
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.Properties.Resources.resources
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.GenerateResource.cache
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.CoreCompileInputs.cache
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.csproj.CopyComplete
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.exe
+C:\Users\lyndo\Source\Repos\Comp4980BioProject\obj\Debug\Comp4980BioProject.pdb
